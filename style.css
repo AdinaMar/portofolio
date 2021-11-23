@@ -1,0 +1,570 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  box-sizing: border-box;
+
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* min-height: 400vh;*/
+  overflow-x: hidden;
+  background-image: linear-gradient(to bottom, #2b1055 0%, #7597de 100%);
+}
+section {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  width: 100%;
+  margin: 40px auto 0;
+  padding: 0 50px;
+}
+.navbar {
+  position: relative;
+  z-index: 100;
+}
+
+#navbarname {
+  background-color: #ff8177;
+  background-image: linear-gradient(to top, #ff4500 0%, #ffd700 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 4rem;
+  -webkit-text-stroke-width: 1.5px;
+}
+
+.meniu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.meniu-item {
+  height: 30px;
+  margin: 0 1rem;
+  width: 100%;
+}
+
+.meniu-links {
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 25px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.meniu-links:hover {
+  background: #fc186f;
+  transition: 0.7s ease;
+}
+@media screen and (max-width: 960px) {
+  .navContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0;
+  }
+
+  .meniu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+  }
+
+  .meniu.effect {
+    background: linear-gradient(to bottom, #2b1055 0%, #7597de 100%);
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 10000;
+    height: 60vh;
+    font-size: 1.6rem;
+  }
+
+  #navbarname {
+    padding-left: 25px;
+    font-size: 3rem;
+  }
+
+  .navbar__stanghette .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+  }
+  .meniu-item {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  .meniu-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    margin: 0;
+  }
+
+  #stanghette {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+  .navbar__stanghette .bar {
+    display: block;
+    cursor: pointer;
+  }
+  #stanghette.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #stanghette.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #stanghette.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .ml13 h2 {
+    font-size: 30px;
+  }
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.ml13 {
+  font-size: 1.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+}
+
+.ml13 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.first {
+  padding: 200px 0;
+  z-index: 1;
+}
+.first_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 90%;
+  text-align: center;
+  padding: 30px;
+}
+
+.intro {
+  font-size: 50px;
+  margin-top: 10px;
+  color: #fff;
+  z-index: 10;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+.intro span {
+  background: #ee0979;
+  background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.cloud1 {
+  position: absolute;
+  top: 150px;
+  left: 200px;
+  z-index: 1;
+  max-width: 600px;
+  -webkit-animation: animateCloud 15s linear infinite;
+  -moz-animation: animateCloud 15s linear infinite;
+  -o-animation: animateCloud 15s linear infinite;
+}
+.cloud2 {
+  position: absolute;
+  top: 100px;
+  left: 200px;
+  max-width: 500px;
+  z-index: 1;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  -webkit-animation: animateCloud 30s linear infinite;
+  -moz-animation: animateCloud 30s linear infinite;
+  -o-animation: animateCloud 30s linear infinite;
+}
+.cloud3 {
+  position: absolute;
+  top: 0;
+  max-width: 600px;
+  z-index: 1;
+  left: -250px;
+  top: 90px;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  -webkit-animation: animateCloud 30s linear infinite;
+  -moz-animation: animateCloud 30s linear infinite;
+  -o-animation: animateCloud 30s linear infinite;
+}
+.cloud4 {
+  position: absolute;
+  left: 470px;
+  top: 250px;
+  max-width: 300px;
+  z-index: 1;
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+  -webkit-animation: animateCloud 25s linear infinite;
+  -moz-animation: animateCloud 25s linear infinite;
+  -o-animation: animateCloud 25s linear infinite;
+}
+.cloud5 {
+  position: absolute;
+  top: 140px;
+  left: 140px;
+  max-width: 500px;
+  z-index: 1;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  -webkit-animation: animateCloud 20s linear infinite;
+  -moz-animation: animateCloud 20s linear infinite;
+  -o-animation: animateCloud 20s linear infinite;
+}
+.cloud6 {
+  position: absolute;
+  left: -150px;
+  top: -130px;
+  max-width: 400px;
+  z-index: 1;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  -webkit-animation: animateCloud 20s linear infinite;
+  -moz-animation: animateCloud 20s linear infinite;
+  -o-animation: animateCloud 20s linear infinite;
+}
+@-webkit-keyframes animateCloud {
+  0% {
+    margin-left: 1000px;
+  }
+
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+@-moz-keyframes animateCloud {
+  0% {
+    margin-left: 1000px;
+  }
+
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+@-o-keyframes animateCloud {
+  0% {
+    margin-left: 1000px;
+  }
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+.main {
+  padding: 7rem 0 0;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s ease;
+}
+.reveal.active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+}
+
+.main_content {
+  width: 100%;
+}
+
+.main_content p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+}
+.main_img--container {
+  text-align: center;
+}
+
+.main_img--card img {
+  border-radius: 50%;
+  width: 60%;
+}
+
+@media screen and (max-width: 1100px) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr; /*un blocco alla volta*/
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    margin: 0 auto;
+    height: 90%;
+  }
+  .main__img--container {
+    display: flex;
+    justify-content: center;
+  }
+  .main_img--card {
+    height: 425px;
+    width: 425px;
+  }
+  .main_content {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .main_content h3 {
+    font-size: 3rem;
+  }
+  .main_content ul {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+  .main_content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .contacts.reveal {
+    transform: none;
+    opacity: 1;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5rem;
+}
+.services ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  list-style: none;
+  font-size: 2rem;
+  background: -webkit-linear-gradient(to right, #ffa500, #8b0000);
+  background: linear-gradient(to right, #ffa500, #8b0000);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+.services li {
+  margin: 1rem;
+}
+.services h3 {
+  align-self: center;
+}
+
+@media screen and (max-width: 480px) {
+  .first_container {
+    font-size: 50%;
+  }
+
+  .main_img--card {
+    width: 180px;
+    height: 180px;
+  }
+  .services {
+    margin: 0;
+  }
+  .services ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    font-size: 90%;
+    margin-top: 2rem;
+  }
+  .services h3 {
+    font-size: 100%;
+    text-align: center;
+  }
+  .main_content p {
+    font-size: 90%;
+  }
+  .project {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+  }
+
+  .immagine img {
+    width: 180px;
+    height: 180px;
+  }
+  .contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reveal {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3rem;
+  height: 90%;
+  z-index: 1;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.text {
+  color: black;
+  width: 100%;
+  font-size: 70%;
+}
+
+.immagine img {
+  border-radius: 50%;
+  width: 50%;
+  margin: 0 2rem;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+.socially {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.social {
+  font-size: 5rem;
+  color: black;
+  padding: 5rem;
+}
+
+.social i:hover {
+  color: #ff4500;
+  transition: 0.3s ease-out;
+}
+.contacts h3 {
+  font-size: 150%;
+  background: -webkit-linear-gradient(to right, #ffa500, #8b0000);
+  background: linear-gradient(to right, #ffa500, #8b0000);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .socially {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .social {
+    font-size: 3rem;
+  }
+
+  .services ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
